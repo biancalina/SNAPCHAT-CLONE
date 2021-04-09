@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 
@@ -10,11 +10,13 @@ const videoConstraints = {
 
 function WebcamCapture() {
         const webcamRef = useRef(null);
+        const [image, setImage] = useState(null);
 
         const capture = useCallback(() => {
             const imageSrc = webcamRef.current.getScreenshot();
             console.log((imageSrc));
-        }, [webcamRef])
+            setImage(imageSrc)
+        },      [webcamRef])
 
     return <div className='webcamCapture'>
         <Webcam 
@@ -29,6 +31,7 @@ function WebcamCapture() {
         <RadioButtonUncheckedIcon
             className='webcamCapture__button'
             onClick={capture}
+            fontSize="large"
         />
     </div>
 }
