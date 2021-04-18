@@ -11,6 +11,7 @@ function App() {
             <Switch>
               <Route exact path="/test">
                 <h1>Snapchat Clone</h1>
+                <h2>Camera</h2>
               </Route>
               <Route exact path="/">
                 <WebcamCapture />
