@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="app">
         <Router>
-          <div className='app__body'>
+          <div className="app__body">
             <Switch>
               <Route path="/preview">
                 <Preview />
