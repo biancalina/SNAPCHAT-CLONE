@@ -12,6 +12,7 @@ import AttachFileIcon from "@material-ui/icons/AttachFile";
 import CropIcon from "@material-ui/icons/Crop";
 import TimerIcon from "@material-ui/icons/Timer";
 import SendIcon from "@material-ui/icons/Send";
+import { v4 as uuid } from "uuid";
 
 function Preview() {
     const cameraImage = useSelector(selectCameraImage);
@@ -28,6 +29,10 @@ function Preview() {
         dispatch(resetCameraImage());
     };
 
+    const sendPost = () => {
+        const id = uuid();
+    }
+
     return (
         <div className="preview">
             <CloseIcon onClick={closePreview} className="preview__close" />
@@ -41,7 +46,7 @@ function Preview() {
                 <TimerIcon />
             </div>
             <img src={cameraImage} alt="" />
-            <div className="preview__footer">
+            <div onClick= {sendPost} className="preview__footer">
                 <h2>Send</h2>
                 <SendIcon fontSize="small" className="preview__sendIcon" />
             </div>
