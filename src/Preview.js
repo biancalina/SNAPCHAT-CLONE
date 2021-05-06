@@ -13,7 +13,8 @@ import CropIcon from "@material-ui/icons/Crop";
 import TimerIcon from "@material-ui/icons/Timer";
 import SendIcon from "@material-ui/icons/Send";
 import { v4 as uuid } from "uuid";
-import { storage } from "./firebase";
+import { db, storage } from "./firebase";
+import firebase from "firebase";
 
 function Preview() {
     const cameraImage = useSelector(selectCameraImage);
@@ -43,7 +44,19 @@ function Preview() {
                 console.log(error);
             },
             () => {
-                storage.ref('posts').child(id).getDownloadURL()
+                storage
+                    .ref('posts')
+                    .child(id)
+                    .getDownloadURL()
+                    .then((url) => {
+                        db.collection('post').add({
+                            imageUrl: url,
+                            username: 'bianca',
+                            read: false,
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                        });
+                        history.replace("/chats");
+                    });
             }
         );
     };
