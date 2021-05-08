@@ -75,7 +75,7 @@ function Preview() {
             </div>
             <img src={cameraImage} alt="" />
             <div onClick= {sendPost} className="preview__footer">
-                <h2>Send</h2>
+                <h2>Send Photo</h2>
                 <SendIcon fontSize="small" className="preview__sendIcon" />
             </div>
         </div>
