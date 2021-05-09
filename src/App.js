@@ -10,6 +10,9 @@ function App() {
         <Router>
           <div className="app__body">
             <Switch>
+              <Route path="/chats">
+                <Chats />
+              </Route>
               <Route path="/preview">
                 <Preview />
               </Route>
