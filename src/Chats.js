@@ -8,7 +8,7 @@ function Chats() {
             <div className="chats__header">
                 <Avatar className="chats__avatar" />
                 <div className="chats__search">
-                    
+                    <h1></h1>
                 </div>
             </div>
         </div>
