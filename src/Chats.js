@@ -2,7 +2,7 @@ import { Avatar } from '@material-ui/core';
 import React from 'react';
 import './Chats.css';
 import SearchIcon from "@material-ui/icons/Search";
-import ChatBubbleIcon from "@material-ui/icons/ChatBubbleIcon";
+import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 
 function Chats() {
     return (
